@@ -8,7 +8,7 @@
   <!-- 引入明朝體與無襯線體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -20,13 +20,13 @@
     /* 背景套用和紙圖片 */
     body, html {
       min-height: 100vh;
-      background-color: #f4f1ea; /* 圖片載入前的備用和紙底色 */
-      background-image: url('japanese_paper.jpg'); /* 套用你的和紙圖 */
+      background-color: #f4f1ea;
+      background-image: url('japanese-paper.jpg');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      color: #222120; /* 濃墨色文字 */
+      color: #222120;
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
@@ -38,7 +38,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 90px 40px 50px;
+      padding: 50px 40px 40px; /* 頂部邊距縮小，讓整體往上一點 */
       text-align: center;
     }
 
@@ -48,61 +48,69 @@
       font-weight: 300;
     }
 
-    /* 1. 主標題區 */
+    /* 1. 主標題區 (更粗更顯眼，位置往上) */
     .header-section {
-      margin-top: auto;
-      margin-bottom: 60px;
+      margin-top: 10px;
+      margin-bottom: 50px;
     }
 
     .title-en {
-      font-size: 1.65rem;
-      letter-spacing: 0.38em;
-      font-weight: 300;
+      font-size: 2.0rem; /* 字號加大 */
+      letter-spacing: 0.35em;
+      font-weight: 600; /* 更粗更顯眼 */
       text-transform: uppercase;
-      margin-bottom: 12px;
-      padding-left: 0.38em;
-      color: #1a1918;
+      margin-bottom: 10px;
+      padding-left: 0.35em;
+      color: #11100f; /* 濃色強化顯眼度 */
     }
 
     .title-jp {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       letter-spacing: 0.28em;
-      color: #686560; /* 柔和松煙灰 */
+      color: #686560;
       padding-left: 0.28em;
     }
 
-    /* 2. 品牌哲學內文區 */
+    /* 2. 品牌哲學內文區 (區塊居中，文字靠左對齊) */
     .philosophy-section {
-      margin-bottom: 60px;
-      max-width: 720px;
-      line-height: 2.2;
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 520px; /* 限制寬度讓靠左對齊在畫面上保持完美視覺中心 */
+      text-align: left; /* 靠左對齊 */
+      line-height: 1.8;
       font-size: 0.95rem;
       font-weight: 300;
       letter-spacing: 0.04em;
       color: #2a2927;
     }
 
-    .philosophy-line {
-      margin: 10px 0;
+    .philosophy-item {
+      margin-bottom: 22px;
     }
 
-    /* 3. 業務範疇區 */
+    .philosophy-title {
+      font-weight: 400;
+      color: #1a1918;
+    }
+
+    .philosophy-desc {
+      padding-left: 1.8em; /* 縮排效果 */
+      color: #4a4742;
+    }
+
+    /* 3. 業務範疇區 (分兩行) */
     .disciplines-section {
       margin-bottom: auto;
       font-size: 0.82rem;
       letter-spacing: 0.16em;
       color: #78746d;
       font-weight: 300;
+      line-height: 1.9;
       transition: color 0.4s ease;
     }
 
     .disciplines-section:hover {
       color: #1a1918;
-    }
-
-    .dash {
-      margin: 0 12px;
-      opacity: 0.5;
     }
 
     /* 4. 頁尾區 */
@@ -116,33 +124,41 @@
       letter-spacing: 0.08em;
       font-weight: 300;
       color: #78746d;
-      padding-top: 40px;
+      padding-top: 30px;
     }
 
     .footer-section a {
       color: inherit;
       text-decoration: none;
-      transition: color 0.3s ease;
+      border-bottom: 1px dotted rgba(120, 116, 109, 0.4);
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
     }
 
     .footer-section a:hover {
       color: #1a1918;
+      border-bottom-color: #1a1918;
     }
 
-    /* RWD 適配 */
+    /* RWD 手機版適配 */
     @media (max-width: 768px) {
       .viewport-container {
-        padding: 60px 24px 40px;
+        padding: 40px 24px 30px;
       }
 
       .title-en {
-        font-size: 1.25rem;
-        letter-spacing: 0.25em;
+        font-size: 1.4rem;
+        letter-spacing: 0.22em;
       }
 
       .philosophy-section {
         font-size: 0.88rem;
-        line-height: 2.0;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .philosophy-desc {
+        padding-left: 1.2em;
       }
 
       .footer-section {
@@ -157,28 +173,38 @@
 
   <div class="viewport-container">
     
-    <!-- 標題區 -->
+    <!-- 1. 主標題區 -->
     <header class="header-section">
       <h1 class="title-en">WABI・THINGS・STUDIO</h1>
       <div class="title-jp jp-font">ワビ・シングス・スタジオ</div>
     </header>
 
-    <!-- 品牌哲學內文 -->
+    <!-- 2. 品牌哲學內文區 (靠左對齊 + 縮排) -->
     <main class="philosophy-section">
-      <p class="philosophy-line">Wabi（<span class="jp-font">侘び</span>）— simplicity, quiet refinement, and understated beauty.</p>
-      <p class="philosophy-line">Things（<span class="jp-font">物・事</span>）— thoughts given form.</p>
-      <p class="philosophy-line">Studio（<span class="jp-font">作り処</span>）— where ideas come to life.</p>
+      <div class="philosophy-item">
+        <div class="philosophy-title">Wabi（<span class="jp-font">侘び</span>）</div>
+        <div class="philosophy-desc">— simplicity, quiet refinement, and understated beauty.</div>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-title">Things（<span class="jp-font">物・事</span>）</div>
+        <div class="philosophy-desc">— thoughts given form.</div>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-title">Studio（<span class="jp-font">作り処</span>）</div>
+        <div class="philosophy-desc">— where ideas come to life.</div>
+      </div>
     </main>
 
-    <!-- 業務範疇 -->
+    <!-- 3. 業務範疇區 (兩行排版) -->
     <div class="disciplines-section">
-      <span class="dash">—</span> Web / Software / App / Music / Video / Game <span class="dash">—</span>
+      <div>— Web / Software / App —</div>
+      <div>— Music / Video / Game —</div>
     </div>
 
-    <!-- 頁尾 -->
+    <!-- 4. 頁尾區 (含 Email 寄信連結) -->
     <footer class="footer-section">
       <div class="footer-email">
-        <a href="mailto:hello@wabithingsstudio.com">hello@wabithingsstudio.com</a>
+        <a href="mailto:wabi.things.studio@gmail.com">wabi.things.studio@gmail.com</a>
       </div>
       <div class="footer-copyright">
         © 2026 WABI・THINGS・STUDIO・TAIWAN
