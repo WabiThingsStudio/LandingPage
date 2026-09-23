@@ -51,7 +51,7 @@
     /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
-      margin-bottom: 150px;
+      margin-bottom: 180px;
     }
 
     .title-en {
@@ -117,9 +117,10 @@
     .footer-section {
       width: 100%;
       display: flex;
-      justify-content: center; /* 👈 改為置中靠攏 */
-      align-items: center;
-      gap: 100px;               /* 👈 設定固定的緊密間隔 */
+      justify-content: center;
+      align-items: baseline;   /* 👈 1. 從 center 改為 baseline（文字底線對齊） */
+      line-height: 1.2;        /* 👈 2. 加入統一行高，消除字型預設的高度偏差 */
+      gap: 80px;
       font-size: 0.78rem;
       letter-spacing: 0.08em;
       font-weight: 300;
