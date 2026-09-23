@@ -51,7 +51,7 @@
     /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
-      margin-bottom: 180px;
+      margin-bottom: 160px;
     }
 
     .title-en {
@@ -73,7 +73,7 @@
 
     /* 2. 品牌哲學內文區 (電腦版) */
     .philosophy-section {
-      margin-bottom: 180px;
+      margin-bottom: 200px;
       width: 100%;
       max-width: 520px;
       text-align: left;
@@ -120,7 +120,7 @@
       justify-content: center;
       align-items: baseline;   /* 👈 1. 從 center 改為 baseline（文字底線對齊） */
       line-height: 1.2;        /* 👈 2. 加入統一行高，消除字型預設的高度偏差 */
-      gap: 80px;
+      gap: 70px;
       font-size: 0.78rem;
       letter-spacing: 0.08em;
       font-weight: 300;
@@ -139,6 +139,7 @@
     .footer-section a:hover {
       color: #1a1918;
       border-bottom-color: #1a1918;
+      transform: translateY(2px); /* 👈 將版權文字向下微調 1 像素，達成視覺平衡 */
     }
 
     /* RWD 手機版專屬優化 */
@@ -187,6 +188,7 @@
 
       .footer-section {
         flex-direction: column;
+        align-items: center; /* 👈 手機版直立時改回置中 */
         gap: 12px;
         text-align: center;
         font-size: 0.72rem;
