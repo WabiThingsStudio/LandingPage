@@ -118,29 +118,33 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: baseline;   /* 👈 1. 從 center 改為 baseline（文字底線對齊） */
-      line-height: 1.2;        /* 👈 2. 加入統一行高，消除字型預設的高度偏差 */
-      gap: 20px;
+      align-items: baseline;   /* 文字底線對齊 */
+      line-height: 1.2;        /* 統一行高 */
+      gap: 50px;
       font-size: 0.78rem;
       letter-spacing: 0.08em;
       font-weight: 300;
       color: #78746d;
       padding-top: 30px;
     }
-
-    .footer-section a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(120, 116, 109, 0.4);
-      padding-bottom: 2px;
-      transition: all 0.3s ease;
+    
+    /* 頁尾項目（Email 與 Copyright） */
+    .footer-email,
+    .footer-copyright {
+      transition: color 0.4s ease; /* 0.4 秒平滑漸變 */
     }
-
-    .footer-section a:hover {
+    
+    /* 微調 Copyright 視覺高度（平時就下移 1px 達到視覺平衡） */
+    .footer-copyright {
+      transform: translateY(5px);
+    }
+    
+    /* 滑鼠移過去時變黑 */
+    .footer-email:hover,
+    .footer-copyright:hover {
       color: #1a1918;
-      border-bottom-color: #1a1918;
-      transform: translateY(5px); /* 👈 將版權文字向下微調 1 像素，達成視覺平衡 */
     }
+    
 
     /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
