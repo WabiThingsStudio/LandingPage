@@ -21,7 +21,7 @@
     body, html {
       min-height: 100vh;
       background-color: #f4f1ea;
-      background-image: url('japanese-paper.jpg');
+      background-image: url('japanese_paper.jpg');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -38,7 +38,7 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 50px 40px 40px; /* 頂部邊距縮小，讓整體往上一點 */
+      padding: 50px 40px 40px;
       text-align: center;
     }
 
@@ -48,20 +48,20 @@
       font-weight: 300;
     }
 
-    /* 1. 主標題區 (更粗更顯眼，位置往上) */
+    /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
       margin-bottom: 50px;
     }
 
     .title-en {
-      font-size: 2.0rem; /* 字號加大 */
+      font-size: 2.0rem;
       letter-spacing: 0.35em;
-      font-weight: 600; /* 更粗更顯眼 */
+      font-weight: 600;
       text-transform: uppercase;
       margin-bottom: 10px;
       padding-left: 0.35em;
-      color: #11100f; /* 濃色強化顯眼度 */
+      color: #11100f;
     }
 
     .title-jp {
@@ -71,12 +71,12 @@
       padding-left: 0.28em;
     }
 
-    /* 2. 品牌哲學內文區 (區塊居中，文字靠左對齊) */
+    /* 2. 品牌哲學內文區 (電腦版) */
     .philosophy-section {
       margin-bottom: 40px;
       width: 100%;
-      max-width: 520px; /* 限制寬度讓靠左對齊在畫面上保持完美視覺中心 */
-      text-align: left; /* 靠左對齊 */
+      max-width: 520px;
+      text-align: left;
       line-height: 1.8;
       font-size: 0.95rem;
       font-weight: 300;
@@ -94,11 +94,11 @@
     }
 
     .philosophy-desc {
-      padding-left: 1.8em; /* 縮排效果 */
+      padding-left: 1.8em;
       color: #4a4742;
     }
 
-    /* 3. 業務範疇區 (分兩行) */
+    /* 3. 業務範疇區 */
     .disciplines-section {
       margin-bottom: auto;
       font-size: 0.82rem;
@@ -140,31 +140,50 @@
       border-bottom-color: #1a1918;
     }
 
-    /* RWD 手機版適配 */
+    /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
       .viewport-container {
-        padding: 40px 24px 30px;
+        padding: 40px 16px 30px;
       }
 
       .title-en {
-        font-size: 1.4rem;
-        letter-spacing: 0.22em;
+        font-size: 1.08rem;
+        letter-spacing: 0.12em;
+        padding-left: 0.12em;
+        white-space: nowrap;
+      }
+
+      .title-jp {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
       }
 
       .philosophy-section {
-        font-size: 0.88rem;
+        font-size: 0.85rem;
         max-width: 100%;
-        padding: 0 10px;
+        padding: 0;
+      }
+
+      .philosophy-item {
+        margin-bottom: 18px;
       }
 
       .philosophy-desc {
-        padding-left: 1.2em;
+        padding-left: 0.5em;
+        font-size: 0.75rem;
+        letter-spacing: -0.01em;
+      }
+
+      .disciplines-section {
+        font-size: 0.75rem;
+        line-height: 1.8;
       }
 
       .footer-section {
         flex-direction: column;
         gap: 12px;
         text-align: center;
+        font-size: 0.72rem;
       }
     }
   </style>
@@ -179,7 +198,7 @@
       <div class="title-jp jp-font">ワビ・シングス・スタジオ</div>
     </header>
 
-    <!-- 2. 品牌哲學內文區 (靠左對齊 + 縮排) -->
+    <!-- 2. 品牌哲學內文區 -->
     <main class="philosophy-section">
       <div class="philosophy-item">
         <div class="philosophy-title">Wabi（<span class="jp-font">侘び</span>）</div>
@@ -195,13 +214,13 @@
       </div>
     </main>
 
-    <!-- 3. 業務範疇區 (兩行排版) -->
+    <!-- 3. 業務範疇區 -->
     <div class="disciplines-section">
       <div>— Web / Software / App —</div>
       <div>— Music / Video / Game —</div>
     </div>
 
-    <!-- 4. 頁尾區 (含 Email 寄信連結) -->
+    <!-- 4. 頁尾區 -->
     <footer class="footer-section">
       <div class="footer-email">
         <a href="mailto:wabi.things.studio@gmail.com">wabi.things.studio@gmail.com</a>
