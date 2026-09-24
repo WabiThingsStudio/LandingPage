@@ -175,7 +175,7 @@
 
     /* =========================================
        螢幕高度受限的電腦版（高度小於 800px 且寬度大於 768px）
-       將文字、圖案與間距大幅等比例縮小，確保完美的留白比例
+       極致微縮版（再縮小 25%，打造極大留白空間）
        ========================================= */
     @media (max-height: 800px) and (min-width: 769px) {
       body, html {
@@ -185,8 +185,8 @@
       .viewport-container {
         height: 100dvh; 
         min-height: auto;
-        /* 大幅壓縮最外層的上下 padding，把空間還給版面 */
-        padding: 20px 40px 10px; 
+        /* 上下 padding 再次壓縮 */
+        padding: 15px 30px 8px; 
       }
 
       .header-section {
@@ -201,40 +201,40 @@
         margin-bottom: auto;
       }
 
-      /* 1. 更小的主視覺圖案 */
+      /* 1. 極小的主視覺圖案 */
       .brand-enso {
-        width: 80px; /* 原 120px -> 100px -> 現在更小 */
-        margin-bottom: 12px;
+        width: 60px; /* 原 80px -> 60px */
+        margin-bottom: 8px;
       }
       
-      /* 2. 更小的主標題 */
+      /* 2. 極小的主標題 */
       .title-en {
-        font-size: 1.5rem; /* 原 2.0rem */
-        margin-bottom: 6px;
+        font-size: 1.0rem; /* 原 1.3rem -> 1.0rem */
+        margin-bottom: 4px;
       }
       .title-jp {
-        font-size: 0.85rem; /* 原 1.2rem */
+        font-size: 0.65rem; /* 原 0.85rem -> 0.65rem */
       }
 
-      /* 3. 更小的品牌哲學內文區 */
+      /* 3. 內文與行距極致微縮 */
       .philosophy-section {
-        font-size: 0.78rem; /* 原 0.95rem */
-        max-width: 420px;
+        font-size: 0.6rem; /* 原 0.78rem -> 0.6rem (約 9.6px) */
+        max-width: 320px;
       }
       .philosophy-item {
-        margin-bottom: 12px; /* 原 22px */
+        margin-bottom: 8px; /* 原 12px -> 8px */
       }
 
-      /* 4. 更小的業務範疇區 */
+      /* 4. 業務範疇區微縮 */
       .disciplines-section {
-        font-size: 0.68rem; /* 原 0.82rem */
+        font-size: 0.55rem; /* 原 0.68rem -> 0.55rem (約 8.8px) */
       }
 
-      /* 5. 更小的頁尾與緊湊的排版 */
+      /* 5. 頁尾與緊湊的排版 */
       .footer-section {
-        font-size: 0.65rem; /* 原 0.78rem */
-        gap: 24px;         
-        padding-top: 12px; 
+        font-size: 0.5rem; /* 原 0.65rem -> 0.5rem (約 8px) */
+        gap: 18px;         /* 原 24px -> 18px */
+        padding-top: 8px; 
       }
     }
 
