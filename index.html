@@ -172,7 +172,24 @@
     .footer-copyright:hover {
       color: #1a1918;
     }
-    
+
+    /* 螢幕高度768優化 */
+    @media (max-height: 800px) and (min-width: 769px) {
+      body, html {
+        overflow: hidden; /* 強制隱藏捲軸 */
+      }
+      
+      .viewport-container {
+        height: 100dvh; /* 自動扣除網址列高度 */
+        min-height: auto;
+      }
+      
+      .header-section,
+      .philosophy-section,
+      .disciplines-section {
+        margin-bottom: auto; /* 將寫死的 vh 釋放為彈性留白，避免超出畫面 */
+      }
+    }
 
     /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
