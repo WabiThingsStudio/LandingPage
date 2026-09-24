@@ -74,6 +74,16 @@
       font-weight: 300;
     }
 
+    /* 主視覺圓相 Logo */
+    .brand-enso {
+      width: 100px;            /* 電腦版顯示寬度（可依喜好微調，如 80px ~ 120px） */
+      height: auto;
+      margin-bottom: 20px;     /* 與下方英文標題拉開距離 */
+      mix-blend-mode: multiply;/* ✨ 核心技術：消除圖片白底，完美融入和紙背景 */
+      opacity: 0.9;            /* 降低一點點不透明度，增加墨水滲入紙張的質感 */
+      pointer-events: none;    /* 防止滑鼠誤觸反白或拖曳 */
+    }
+
     /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
@@ -177,7 +187,7 @@
        螢幕高度受限的電腦版（高度小於 800px 且寬度大於 768px）
        極致微縮版（再縮小 25%，打造極大留白空間）
        ========================================= */
-    @media (max-height: 720px) and (min-width: 769px) {
+    @media (max-height: 800px) and (min-width: 769px) {
       body, html {
         /*overflow: hidden;*/ 
       }
@@ -189,6 +199,11 @@
         padding: 15px 30px 8px; 
       }
 
+      .brand-enso {
+        width: 60px;        /* 筆電/低高度螢幕的極小圖案 */
+        margin-bottom: 8px;
+      }
+      
       .header-section {
         margin-bottom: 20vh;
       }
@@ -244,7 +259,12 @@
       .viewport-container {
         padding: 40px 16px 30px;
       }
-
+      
+      .brand-enso {
+        width: 70px;         /* 手機版適度縮小 */
+        margin-bottom: 12px; /* 縮小與標題的距離 */
+      }
+      
       .header-section {
         /*margin-bottom: 130px;*/ /* 手機版的間距（可依需求調整） */
         margin-bottom: 16vh;
@@ -301,6 +321,7 @@
     
     <!-- 1. 主標題區 -->
     <header class="header-section">
+      <img src="image.jpg" alt="Wabi Things Studio Logo" class="brand-enso">
       <h1 class="title-en">WABI・THINGS・STUDIO</h1>
       <div class="title-jp jp-font">ワビ・シングス・スタジオ</div>
     </header>
