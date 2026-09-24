@@ -173,65 +173,66 @@
       color: #1a1918;
     }
 
-/* =========================================
+    /* =========================================
        螢幕高度受限的電腦版（高度小於 800px 且寬度大於 768px）
-       將文字、圖案與間距等比例縮小，維持原有的視覺空間感
+       將文字、圖案與間距大幅等比例縮小，確保完美的留白比例
        ========================================= */
     @media (max-height: 800px) and (min-width: 769px) {
       body, html {
-        overflow: hidden; /* 強制隱藏捲軸 */
+        overflow: hidden; 
       }
       
       .viewport-container {
-        height: 100dvh; /* 自動扣除網址列高度 */
+        height: 100dvh; 
         min-height: auto;
-        padding: 30px 40px 20px; /* 微縮最外層的上下留白 */
+        /* 大幅壓縮最外層的上下 padding，把空間還給版面 */
+        padding: 20px 40px 10px; 
       }
 
-      /* 釋放原本寫死的巨大間距為彈性空間 */
       .header-section,
       .philosophy-section,
       .disciplines-section {
         margin-bottom: auto;
       }
 
-      /* 1. 縮小圓相圖案與標題間距 */
+      /* 1. 更小的主視覺圖案 */
       .brand-enso {
-        width: 100px; /* 原 120px */
-        margin-bottom: 16px;
+        width: 80px; /* 原 120px -> 100px -> 現在更小 */
+        margin-bottom: 12px;
       }
       
-      /* 2. 縮小主標題 */
+      /* 2. 更小的主標題 */
       .title-en {
-        font-size: 1.6rem; /* 原 2.0rem */
-        margin-bottom: 8px;
+        font-size: 1.3rem; /* 原 2.0rem */
+        margin-bottom: 6px;
       }
       .title-jp {
-        font-size: 1.0rem; /* 原 1.2rem */
+        font-size: 0.85rem; /* 原 1.2rem */
       }
 
-      /* 3. 縮小品牌哲學內文與行距 */
+      /* 3. 更小的品牌哲學內文區 */
       .philosophy-section {
-        font-size: 0.85rem; /* 原 0.95rem */
-        max-width: 480px;
+        font-size: 0.78rem; /* 原 0.95rem */
+        max-width: 420px;
       }
       .philosophy-item {
-        margin-bottom: 16px; /* 原 22px */
+        margin-bottom: 12px; /* 原 22px */
       }
 
-      /* 4. 縮小業務範疇區 */
+      /* 4. 更小的業務範疇區 */
       .disciplines-section {
-        font-size: 0.75rem; /* 原 0.82rem */
+        font-size: 0.68rem; /* 原 0.82rem */
       }
 
-      /* 5. 縮小頁尾與元素橫向間距 */
+      /* 5. 更小的頁尾與緊湊的排版 */
       .footer-section {
-        font-size: 0.7rem; /* 原 0.78rem */
-        gap: 30px;         /* 原 40px */
-        padding-top: 20px; /* 原 30px */
+        font-size: 0.65rem; /* 原 0.78rem */
+        gap: 24px;         
+        padding-top: 12px; 
       }
     }
 
+    
     /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
       .viewport-container {
