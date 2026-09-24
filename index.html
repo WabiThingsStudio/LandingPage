@@ -173,7 +173,10 @@
       color: #1a1918;
     }
 
-    /* 螢幕高度768優化 */
+/* =========================================
+       螢幕高度受限的電腦版（高度小於 800px 且寬度大於 768px）
+       將文字、圖案與間距等比例縮小，維持原有的視覺空間感
+       ========================================= */
     @media (max-height: 800px) and (min-width: 769px) {
       body, html {
         overflow: hidden; /* 強制隱藏捲軸 */
@@ -182,12 +185,50 @@
       .viewport-container {
         height: 100dvh; /* 自動扣除網址列高度 */
         min-height: auto;
+        padding: 30px 40px 20px; /* 微縮最外層的上下留白 */
       }
-      
+
+      /* 釋放原本寫死的巨大間距為彈性空間 */
       .header-section,
       .philosophy-section,
       .disciplines-section {
-        margin-bottom: auto; /* 將寫死的 vh 釋放為彈性留白，避免超出畫面 */
+        margin-bottom: auto;
+      }
+
+      /* 1. 縮小圓相圖案與標題間距 */
+      .brand-enso {
+        width: 100px; /* 原 120px */
+        margin-bottom: 16px;
+      }
+      
+      /* 2. 縮小主標題 */
+      .title-en {
+        font-size: 1.6rem; /* 原 2.0rem */
+        margin-bottom: 8px;
+      }
+      .title-jp {
+        font-size: 1.0rem; /* 原 1.2rem */
+      }
+
+      /* 3. 縮小品牌哲學內文與行距 */
+      .philosophy-section {
+        font-size: 0.85rem; /* 原 0.95rem */
+        max-width: 480px;
+      }
+      .philosophy-item {
+        margin-bottom: 16px; /* 原 22px */
+      }
+
+      /* 4. 縮小業務範疇區 */
+      .disciplines-section {
+        font-size: 0.75rem; /* 原 0.82rem */
+      }
+
+      /* 5. 縮小頁尾與元素橫向間距 */
+      .footer-section {
+        font-size: 0.7rem; /* 原 0.78rem */
+        gap: 30px;         /* 原 40px */
+        padding-top: 20px; /* 原 30px */
       }
     }
 
