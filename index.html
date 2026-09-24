@@ -177,9 +177,9 @@
        螢幕高度受限的電腦版（高度小於 800px 且寬度大於 768px）
        極致微縮版（再縮小 25%，打造極大留白空間）
        ========================================= */
-    @media (max-height: 800px) and (min-width: 769px) {
+    @media (max-height: 720px) and (min-width: 769px) {
       body, html {
-        overflow: hidden; 
+        /*overflow: hidden;*/ 
       }
       
       .viewport-container {
@@ -209,7 +209,7 @@
       
       /* 2. 極小的主標題 */
       .title-en {
-        font-size: 1.3rem; /* 原 1.3rem -> 1.0rem */
+        font-size: 1.15rem; /* 原 1.3rem -> 1.0rem */
         margin-bottom: 4px;
       }
       .title-jp {
@@ -218,7 +218,7 @@
 
       /* 3. 內文與行距極致微縮 */
       .philosophy-section {
-        font-size: 0.8rem; /* 原 0.78rem -> 0.6rem (約 9.6px) */
+        font-size: 0.7rem; /* 原 0.78rem -> 0.6rem (約 9.6px) */
         max-width: 320px;
       }
       .philosophy-item {
