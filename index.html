@@ -224,6 +224,76 @@
       
       /* 2. 極小的主標題 */
       .title-en {
+        font-size: 1.3rem; 
+        margin-bottom: 4px;
+      }
+      .title-jp {
+        font-size: 0.85rem; 
+      }
+
+      /* 3. 內文與行距極致微縮 */
+      .philosophy-section {
+        font-size: 0.78rem; 
+        max-width: 320px;
+      }
+      .philosophy-item {
+        margin-bottom: 12px; 
+      }
+
+      /* 4. 業務範疇區微縮 */
+      .disciplines-section {
+        font-size: 0.68rem; 
+      }
+
+      /* 5. 頁尾與緊湊的排版 */
+      .footer-section {
+        font-size: 0.65rem; 
+        gap: 24px;         
+        padding-top: 8px; 
+      }
+    }
+    
+    /* =========================================
+       螢幕高度受限的電腦版（高度小於 720px 且寬度大於 768px）
+       極致微縮版（再縮小 25%，打造極大留白空間）
+       ========================================= */
+    @media (max-height: 720px) and (min-width: 769px) {
+      body, html {
+        /*overflow: hidden;*/ 
+      }
+      
+      .viewport-container {
+        height: 100dvh; 
+        min-height: auto;
+        /* 上下 padding 再次壓縮 */
+        padding: 15px 30px 8px; 
+      }
+
+      .brand-enso {
+        width: 60px;        /* 筆電/低高度螢幕的極小圖案 */
+        margin-bottom: 8px;
+      }
+      
+      .header-section {
+        margin-bottom: 20vh;
+      }
+
+      .philosophy-section {
+        margin-bottom: 24vh;
+      }
+
+      .disciplines-section {
+        margin-bottom: auto;
+      }
+
+      /* 1. 極小的主視覺圖案 */
+      .brand-enso {
+        width: 60px; /* 原 80px -> 60px */
+        margin-bottom: 8px;
+      }
+      
+      /* 2. 極小的主標題 */
+      .title-en {
         font-size: 1.15rem; /* 原 1.3rem -> 1.0rem */
         margin-bottom: 4px;
       }
