@@ -74,6 +74,31 @@
       font-weight: 300;
     }
 
+    /* =========================================
+       中央巨型圓相浮水印 (互動式背景)
+       ========================================= */
+    .bg-enso-watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* 預設置中並微微縮小，顯現時會順暢放大 */
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 500px;                     /* 寬度約等於 WABI・THINGS・STUDIO 的整體寬度 */
+      max-width: 85vw;                  /* 手機版自動縮小，不超出螢幕邊界 */
+      height: auto;
+      opacity: 0;                       /* ✨ 平時完全看不見 */
+      mix-blend-mode: multiply;         /* ✨ 自動消除白底，完美融入和紙紋理 */
+      z-index: 0;                       /* 墊在所有文字內容下方 */
+      pointer-events: none;             /* 穿透點擊，不干擾滑鼠選取文字 */
+      transition: opacity 0.6s ease, transform 0.6s ease; /* ✨ 淡入淡出的淡雅動畫 */
+    }
+    
+    /* 當滑鼠移到標題的 .title-enso-o 上時，喚醒背景大圓相 */
+    .viewport-container:has(.title-enso-o:hover) .bg-enso-watermark {
+      opacity: 0.5;                     /* ✨ 顯示為 50% 透明度 */
+      transform: translate(-50%, -50%) scale(1);
+    }
+
     /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
@@ -379,7 +404,10 @@
 <body>
 
   <div class="viewport-container">
-    
+
+    <!-- ✨ 新增：畫面中央的巨型圓相浮水印 (預設隱藏) -->
+    <img src="enso_o.png" alt="" class="bg-enso-watermark">
+      
     <!-- 1. 主標題區 -->
     <header class="header-section">
       <h1 class="title-en">WABI・THINGS・STUDI<img src="enso_o.png" alt="O" class="title-enso-o"></h1>
