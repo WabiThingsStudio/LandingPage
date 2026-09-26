@@ -147,6 +147,16 @@
       transition: color 0.4s ease;
     }
 
+    /* 第一行：稍微拉寬字距 */
+    .disc-line-1 {
+      letter-spacing: 0.21em; /* 原本是 0.16em，微調加寬 */
+    }
+    
+    /* 第二行：稍微收緊字距 */
+    .disc-line-2 {
+      letter-spacing: 0.13em; /* 原本是 0.16em，微調收窄 */
+    }
+
     .disciplines-section:hover {
       color: #1a1918;
     }
@@ -414,8 +424,8 @@
 
     <!-- 3. 業務範疇區 -->
     <div class="disciplines-section">
-      <div>— Web / Software / App —</div>
-      <div>— Design / Content / Media —</div>
+      <div class="disc-line-1">— Web / Software / App —</div>
+      <div class="disc-line-2">— Design / Content / Media —</div>
     </div>
 
     <!-- 4. 頁尾區 -->
