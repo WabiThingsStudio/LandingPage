@@ -74,16 +74,6 @@
       font-weight: 300;
     }
 
-    /* 主視覺圓相 Logo */
-    .brand-enso {
-      width: 100px;            /* 電腦版顯示寬度（可依喜好微調，如 80px ~ 120px） */
-      height: auto;
-      margin-bottom: 20px;     /* 與下方英文標題拉開距離 */
-      mix-blend-mode: multiply;/* ✨ 核心技術：消除圖片白底，完美融入和紙背景 */
-      opacity: 0.9;            /* 降低一點點不透明度，增加墨水滲入紙張的質感 */
-      pointer-events: none;    /* 防止滑鼠誤觸反白或拖曳 */
-    }
-
     /* 1. 主標題區 (電腦版) */
     .header-section {
       margin-top: 10px;
@@ -101,6 +91,17 @@
       color: #11100f;
     }
 
+    /* 將 STUDIO 的 O 替換為 Ensō 圖案 */
+    .title-enso-o {
+      height: 0.82em;           /* ✨ 核心：以 em 設定高度，完美對齊大寫字母 O 的 cap-height */
+      width: auto;
+      vertical-align: -0.05em;  /* ✨ 精準垂直對齊文字底線 (Baseline) */
+      mix-blend-mode: multiply; /* ✨ 自動消除圖片白底，融入和紙背景 */
+      margin-left: 0.05em;      /* 微調與前一個字母 I 的距離 */
+      pointer-events: none;     /* 防止滑鼠誤選或拖曳圖片 */
+      display: inline-block;
+    }
+    
     .title-jp {
       font-size: 1.2rem;
       letter-spacing: 0.25em;
@@ -211,10 +212,6 @@
         padding: 15px 30px 8px; 
       }
 
-      .brand-enso {
-        width: 60px;        /* 筆電/低高度螢幕的極小圖案 */
-        margin-bottom: 8px;
-      }
       
       .header-section {
         margin-bottom: 22vh;
@@ -228,11 +225,6 @@
         margin-bottom: auto;
       }
 
-      /* 1. 極小的主視覺圖案 */
-      .brand-enso {
-        width: 60px; /* 原 80px -> 60px */
-        margin-bottom: 8px;
-      }
       
       /* 2. 極小的主標題 */
       .title-en {
@@ -281,10 +273,6 @@
         padding: 15px 30px 8px; 
       }
 
-      .brand-enso {
-        width: 60px;        /* 筆電/低高度螢幕的極小圖案 */
-        margin-bottom: 8px;
-      }
       
       .header-section {
         margin-bottom: 20vh;
@@ -298,11 +286,6 @@
         margin-bottom: auto;
       }
 
-      /* 1. 極小的主視覺圖案 */
-      .brand-enso {
-        width: 60px; /* 原 80px -> 60px */
-        margin-bottom: 8px;
-      }
       
       /* 2. 極小的主標題 */
       .title-en {
@@ -341,11 +324,7 @@
       .viewport-container {
         padding: 40px 16px 30px;
       }
-      
-      .brand-enso {
-        width: 70px;         /* 手機版適度縮小 */
-        margin-bottom: 12px; /* 縮小與標題的距離 */
-      }
+
       
       .header-section {
         /*margin-bottom: 130px;*/ /* 手機版的間距（可依需求調整） */
@@ -403,9 +382,12 @@
     
     <!-- 1. 主標題區 -->
     <header class="header-section">
-      <!-- img src="image.jpg" alt="Wabi Things Studio Logo" class="brand-enso" -->
+      <h1 class="title-en">WABI・THINGS・STUDI<img src="enso_o.png" alt="O" class="title-enso-o"></h1>
+      <div class="title-jp jp-font">ワビ・シングス・スタジオ</div>
+      <!--
       <h1 class="title-en">WABI・THINGS・STUDIO</h1>
       <div class="title-jp jp-font">ワビ・シングス・スタジオ</div>
+      -->
     </header>
 
     <!-- 2. 品牌哲學內文區 -->
