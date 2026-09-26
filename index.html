@@ -123,8 +123,15 @@
       vertical-align: -0.065em;  /* ✨ 精準垂直對齊文字底線 (Baseline) */
       mix-blend-mode: multiply; /* ✨ 自動消除圖片白底，融入和紙背景 */
       margin-left: -0.10em;      /* 微調與前一個字母 I 的距離 */
-      pointer-events: none;     /* 防止滑鼠誤選或拖曳圖片 */
       display: inline-block;
+
+      /* ✨ 關鍵修正：開啟滑鼠事件，並加上手勢指標 */
+      pointer-events: auto;       
+      cursor: pointer;            
+      
+      /* 防止圖片被滑鼠藍色反白或拉走拖曳 */
+      user-select: none;
+      -webkit-user-drag: none;
     }
     
     .title-jp {
