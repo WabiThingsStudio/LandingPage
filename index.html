@@ -403,6 +403,69 @@
       }
     }
 
+    /* =========================================
+       螢幕高度受限的電腦版（高度小於 720px 且寬度大於 768px）
+       極致微縮版（再縮小 25%，打造極大留白空間）
+       ========================================= */
+    @media (max-height: 500px) and (min-width: 769px) {
+      body, html {
+        /*overflow: hidden;*/ 
+      }
+      
+      .viewport-container {
+        height: 100dvh; 
+        min-height: auto;
+        /* 上下 padding 再次壓縮 */
+        padding: 30px 30px 30px; 
+      }
+      
+      .bg-enso-watermark {
+        width: 300px;                     /* 寬度約等於 WABI・THINGS・STUDIO 的整體寬度 */
+      }
+      
+      .header-section {
+        margin-bottom: 16vh;
+      }
+
+      .philosophy-section {
+        margin-bottom: 14vh;
+      }
+
+      .disciplines-section {
+        margin-bottom: auto;
+      }
+
+      
+      /* 2. 極小的主標題 */
+      .title-en {
+        font-size: 1.15rem; /* 原 1.3rem -> 1.0rem */
+        margin-bottom: 4px;
+      }
+      .title-jp {
+        font-size: 0.65rem; /* 原 0.85rem -> 0.65rem */
+      }
+
+      /* 3. 內文與行距極致微縮 */
+      .philosophy-section {
+        font-size: 0.7rem; /* 原 0.78rem -> 0.6rem (約 9.6px) */
+        max-width: 320px;
+      }
+      .philosophy-item {
+        margin-bottom: 8px; /* 原 12px -> 8px */
+      }
+
+      /* 4. 業務範疇區微縮 */
+      .disciplines-section {
+        font-size: 0.55rem; /* 原 0.68rem -> 0.55rem (約 8.8px) */
+      }
+
+      /* 5. 頁尾與緊湊的排版 */
+      .footer-section {
+        font-size: 0.5rem; /* 原 0.65rem -> 0.5rem (約 8px) */
+        gap: 18px;         /* 原 24px -> 18px */
+        padding-top: 8px; 
+      }
+    }
     
     /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
