@@ -406,6 +406,12 @@
     
     /* RWD 手機版專屬優化 */
     @media (max-width: 768px) {
+      html, body {
+        height: 100dvh;
+        overflow-y: auto;           /* ✨ 超出時才顯示滾動條，確保 Footer 不被裁切 */
+        overscroll-behavior-y: none;/* ✨ 關鍵：徹底禁止手指拉動時抽離底圖產生空白 */
+      }
+      
       .viewport-container {
         padding: 30px 16px 20px;
       }
